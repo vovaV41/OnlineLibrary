@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "cschlosser.doxdocgen",
+        "ms-azuretools.vscode-docker",
+        "njpwerner.autodocstring",
+        "github.codespaces"
+    ]
+}

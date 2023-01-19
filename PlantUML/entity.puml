@@ -1,0 +1,39 @@
+@startuml
+entity  "users" as  users {
+    *id : int not null primary key auto_increment;
+    --
+    mail : varchar(350) not null;
+    password : varchar(100) not null;
+    login : varchar(100) not null;
+    admin : varchar(1);
+}
+
+entity "likeUserBook" as likeBook {
+    *id: int not null primary key auto_increment;
+    --
+    idUser: int not null foreign key;
+    idBook: int not null foreign key;
+}
+
+entity "books" as books{
+* id      : int not null primary key auto_increment;
+--
+name      : varchar(100) not null;
+describes : varchar(500);
+}
+
+entity "bookAuthor" as author{
+idBook : int not null foreign key;
+author : varchar(200) not null;
+}
+entity "bookGenre" as genre{
+idBook : int not null foreign key;
+genre  : varchar(200) not null;
+}
+
+users  ||-|{ likeBook
+books  ||-|{ author
+books  ||-|{ genre
+books  ||-|| likeBook 
+
+@enduml

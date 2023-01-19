@@ -1,0 +1,106 @@
+<?php 
+$startPage ="
+<html>
+    <title>Бібліотека</title>
+<head>
+
+</head>
+<body >
+
+
+<form method='post' action='' name='regForm' >
+  <div class='reg'>
+      <label>Пошта  </label>
+      <input style='margin-left: 11%; font-size: 24px;' type='mail' pattern='.+@\w+\.[a-zA-Z]+' name='mail'   /><br>
+      <label class='textReg'>Поля для реєстрації </label>
+      <div class='login'><br>
+        <label class='textLogin' >Поля для входу </label><br>
+      <label> Логін </label>
+      <input style='margin-left: 10%; font-size: 24px;' type='text' name='login' maxlength='100' required />
+    <br>
+      <label>Пароль</label>
+      <input style='margin-left: 7%; font-size: 24px;' type='password' name='password' maxlength='100' required />
+    <br>
+    <button class='regButton' type='submit' name='enter' value='enter'>Війти</button>
+  </div>
+</form>
+
+
+
+
+
+<style>
+.reg {
+    margin-left: 25%;
+  margin-top: 5%;
+   background-color:darkgrey;
+ width: 40%;
+height: 35%;
+font-size: 24px;
+border-style:groove;
+border-radius: 20px;
+border-color: brown;
+border-width: 7px;
+}
+.regButton{
+background-color: aqua;
+width: 98%;
+
+margin: 7px;
+font-size: 24px;
+}
+.login{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  margin-top: 1%;
+border-style: groove;
+border-radius: 20px;
+border-color :lawngreen ;
+border-width: 7px;
+  background-color:antiquewhite;
+}
+
+.textLogin {
+  
+  margin-left: 40%;
+font-size: 21px;
+color: rgb(13, 177, 48);
+}
+.textReg {
+  
+  margin-left: 36%;
+font-size: 21px;
+color: rgb(125, 37, 5);
+}
+
+input { 
+margin: 1%;
+}
+
+label {
+  margin-left: 1%;
+  font-size: 24px;
+}
+
+body{
+background-color:antiquewhite;
+
+}
+
+button {
+    background-color: #222fb6; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 1px;
+}
+    </style>
+
+</body>
+</html>
+";?>

@@ -1,0 +1,56 @@
+<?php
+$akaPage ="
+<html>
+<head>
+</head>
+<body>
+
+    <br><h2 class='progress'>". $_COOKIE["login"]."</h2>
+    <center><form method='post' action=''><table><tr>
+        <button type='submit' name='exit' value='exit' style='background-color: red;'>Війти</button>
+        <button type='submit' name='showLikeBook' value='showLikeBook'>Обрані Книжки</button>
+        <button type='submit' name='startEnterBook' value=''>Головна</button>
+        <input  type='text'   name='searchBooks' value='' style='font-size: 30px; margin-top: 1%;' maxlength='50'></input>
+        <button type='submit' name='searchBook' value='searchBook'> Пошук книги</button>
+    </table>
+    </form></center>
+
+
+</body>
+
+</html>
+<style>
+
+
+@keyframes go-left-right {        
+    from { left: 0px; }             
+    to { left: calc(80% - ".strlen($_COOKIE["login"])."px); } 
+  }
+
+  .progress {
+    width: ".strlen($_COOKIE["login"]).strlen($_COOKIE["login"])."px;
+    height: 10px;
+    font-size: 25px;
+    animation: go-left-right 8s infinite alternate;
+   position: relative;
+  }
+
+    body{
+        background-color: blanchedalmond;
+        
+    }
+    button {
+    background-color: #222fb6; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 1px;
+}
+    </style>
+
+
+";?>

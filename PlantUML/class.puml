@@ -1,0 +1,76 @@
+@startuml
+
+annotation "В ці програмі використовуються тільки анонімні класи"
+class "Добавлення книги" as addBook {
+     String addBook
+}
+class "Сторінка адміністратора" as adminPage{
+    adminPage: string
+    }
+class "Сторінка користувача" as akaPage{
+    String akaPage
+}
+class "Початкова сторінка" as startPage{
+    String startPage
+}
+class "Сторінка умов" as usloviaPage{
+    String usloviaPage
+}
+
+index <|-- book
+index <|-- user
+index <|-- addBook
+index <|-- adminPage
+index <|-- akaPage
+index <|-- startPage
+index <|-- usloviaPage
+
+class "Ядро" as index
+class "Книга" as book{
+    searchBookSQL(nameBook:String, pole:String, table:String, searchFrame:String)
+    addAuthorSQL(bookID:String, author:String)
+    addGenreSQL(bookID:String, genre:String)
+    selectQuerySQL(table:String, bookID:String, rows:String, columns:String)
+    addLikeBook(bookID:String)
+    auditLikeBook(bookID:String)
+    deleteBook(bookID:String)
+    selectAuthorOrGenre(bookID:String)
+    deleteAuthor(bookID:String, author:String)
+    deleteGenre(bookID:String, genre:String)
+    addAuthorOrGenre(bookID:String)
+    showLikeBooks()
+    csvBook(filename:String):void
+    addBookSQL(name, describes:String):void
+}
+class "Адмін права й міграція ДБ" as config{
+    addRootUser(login:String, TrueOrFalse:String):Boolean
+    workInSQL(query:String):Array
+    testTable()
+}
+
+class "Користувач" as user{
+    insertUserSQL():Boolean
+    isAdmin():Boolean 
+    querySQL(query:string):Array
+}
+
+
+package librety <<database>>{
+}
+
+book ..> librety
+user ..> librety
+config ..> librety
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
